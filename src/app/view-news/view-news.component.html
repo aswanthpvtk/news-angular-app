@@ -4,14 +4,15 @@
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div class="row g-3 mt-4">
-                <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3" *ngFor = "let i of data">
-                    <div class="card" style="width:18rem; height: 40rem;" >
-                        <img height="200px"src="{{i.urlToImage}}" class="card-img-top" alt="...">
+                <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" *ngFor="let i of news.articles">
+                    <div class="card mb-3">
+                        <img height="400px" src="{{i.urlToImage}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">{{i.title}} </h5>
-                          <p class="card-text">{{i.description}}</p>
-                          <p class="card-text">Author : {{i.author}}</p>
-                          <p class="card-text">Date of Publishe : {{i.publishedAt}}</p>
+                          <h5 style="height:50px;overflow-y: hidden;" class="card-title">{{i.title}}</h5>
+                          <p style="height:70px;overflow-y: hidden;" class="card-text">{{i.description}}</p>
+                          <br>
+                          <p class="card-text"><small class="text-muted">Published on: {{i.publishedAt}}</small></p>
+                          <a class="btn btn-primary" href="{{i.url}}">More</a>
                         </div>
                       </div>
                 </div>
