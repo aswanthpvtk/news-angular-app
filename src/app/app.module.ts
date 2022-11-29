@@ -6,16 +6,32 @@ import { AppComponent } from './app.component';
 import { ViewNewsComponent } from './view-news/view-news.component';
 import { AddnewComponent } from './addnew/addnew.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http'
 
+const myRoute : Routes = [
+  {
+    path:"",
+    component:AddnewComponent
+  },
+  {
+    path:"view",
+    component:ViewNewsComponent
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
     ViewNewsComponent,
-    AddnewComponent
+    AddnewComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule,FormsModule,
+    RouterModule.forRoot(myRoute),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
